@@ -12,12 +12,11 @@ protocol HTTPClient {
 }
 
 class ClientService: HTTPClient {
-    func sendRequest<T>(_ request: Requestable) async throws -> T where T : Decodable {
+    func sendRequest<T: Decodable>(_ request: Requestable) async throws -> T {
         let urlRequest = try request.makeURLRequest()
 
         let (data, response) = try await URLSession.shared.data(for: urlRequest)
-        
-
-        throw NetworkError.invalidURL
+        let decodedData = try JSONDecoder().decode(T.self, from: data)
+        return decodedData
     }
 }

@@ -8,6 +8,10 @@
 import SwiftUI
 
 struct ContentView: View {
+
+    @State private var movieResults = [MovieResult]()
+    @State private var movieSearchQuery: String = ""
+
     var body: some View {
         VStack {
             Image(systemName: "globe")
@@ -16,6 +20,18 @@ struct ContentView: View {
             Text("Hello, world!")
         }
         .padding()
+        .onAppear {
+            Task {
+                let request = SearchRequest()
+                do {
+                    let movieInfo: MovieInfo = try await ClientService().sendRequest(request)
+                    movieResults = movieInfo.results
+                }
+                catch {
+                    print("Error")
+                }
+            }
+        }
     }
 }
 

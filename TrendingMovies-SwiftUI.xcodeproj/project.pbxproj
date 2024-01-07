@@ -17,6 +17,7 @@
 		E5906DFB2B4A8F37002ABC81 /* HTTPMethod.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5906DFA2B4A8F37002ABC81 /* HTTPMethod.swift */; };
 		E5906DFD2B4A8F91002ABC81 /* NetworkError.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5906DFC2B4A8F91002ABC81 /* NetworkError.swift */; };
 		E5906E002B4A91ED002ABC81 /* SearchRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5906DFF2B4A91ED002ABC81 /* SearchRequest.swift */; };
+		E5906E042B4A94C3002ABC81 /* MovieInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5906E032B4A94C3002ABC81 /* MovieInfo.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -42,6 +43,7 @@
 		E5906DFA2B4A8F37002ABC81 /* HTTPMethod.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HTTPMethod.swift; sourceTree = "<group>"; };
 		E5906DFC2B4A8F91002ABC81 /* NetworkError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkError.swift; sourceTree = "<group>"; };
 		E5906DFF2B4A91ED002ABC81 /* SearchRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchRequest.swift; sourceTree = "<group>"; };
+		E5906E032B4A94C3002ABC81 /* MovieInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieInfo.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -86,6 +88,7 @@
 				E5906DCB2B497F23002ABC81 /* TrendingMovies_SwiftUIApp.swift */,
 				E5906DCD2B497F23002ABC81 /* ContentView.swift */,
 				E5906DF92B4A8F0F002ABC81 /* Networking */,
+				E5906E022B4A9493002ABC81 /* Models */,
 				E5906DCF2B497F24002ABC81 /* Assets.xcassets */,
 				E5906DD12B497F24002ABC81 /* Preview Content */,
 			);
@@ -134,6 +137,14 @@
 				E5906DFC2B4A8F91002ABC81 /* NetworkError.swift */,
 			);
 			path = Helpers;
+			sourceTree = "<group>";
+		};
+		E5906E022B4A9493002ABC81 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				E5906E032B4A94C3002ABC81 /* MovieInfo.swift */,
+			);
+			path = Models;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -242,6 +253,7 @@
 				E5906DFD2B4A8F91002ABC81 /* NetworkError.swift in Sources */,
 				E5906E002B4A91ED002ABC81 /* SearchRequest.swift in Sources */,
 				E5906DFB2B4A8F37002ABC81 /* HTTPMethod.swift in Sources */,
+				E5906E042B4A94C3002ABC81 /* MovieInfo.swift in Sources */,
 				E5906DF62B498621002ABC81 /* ClientService.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
