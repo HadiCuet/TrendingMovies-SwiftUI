@@ -14,17 +14,23 @@ struct ContentView: View {
     private let movieService = MovieService(clientService: ClientService())
 
     var body: some View {
-        VStack {
-            List {
-                ForEach(movieResults) { item in
-                    ItemView(movieItem: item)
+        NavigationStack {
+            VStack {
+                List {
+                    ForEach(movieResults) { item in
+                        NavigationLink {
+                            Text(item.title)
+                        } label: {
+                            ItemView(movieItem: item)
+                        }
+                    }
+                    .padding()
                 }
-                .padding()
             }
-        }
-        .onAppear {
-            Task {
-                movieResults = await movieService.searchMovie(byString: "Marvel")
+            .onAppear {
+                Task {
+                    movieResults = await movieService.searchMovie(byString: "Marvel")
+                }
             }
         }
     }
