@@ -8,14 +8,44 @@
 import SwiftUI
 
 struct ContentView: View {
+    @State var searchTask: Task<Void, Never>? = nil
+    @State private var movieResults = [MovieResult]()
+    @State private var movieSearchQuery: String = ""
+    private let movieService = MovieService(clientService: ClientService())
+
     var body: some View {
-        VStack {
-            Image(systemName: "globe")
-                .imageScale(.large)
-                .foregroundStyle(.tint)
-            Text("Hello, world!")
+        NavigationStack {
+            VStack {
+                List {
+                    ForEach(movieResults) { item in
+                        NavigationLink {
+                            Text(item.title)
+                        } label: {
+                            ItemView(movieItem: item)
+                        }
+                    }
+                    .padding()
+                }
+            }
+            .task { runSearch() }
+            .navigationTitle("Movie List")
+            .searchable(text: $movieSearchQuery, prompt: "Search movie")
+            .onSubmit(of: .search) { runSearch() }
+            .onChange(of: movieSearchQuery) { _ in
+                runSearch()
+            }
         }
-        .padding()
+    }
+
+    func runSearch() {
+        searchTask?.cancel()
+        searchTask = Task {
+            if movieSearchQuery.isEmpty {
+                movieResults = await movieService.getTrendingMovies()
+            } else {
+                movieResults = await movieService.searchMovie(byString: movieSearchQuery)
+            }
+        }
     }
 }
 
