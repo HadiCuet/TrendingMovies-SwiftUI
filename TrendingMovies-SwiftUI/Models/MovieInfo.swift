@@ -11,8 +11,12 @@ struct MovieInfo: Decodable {
     let results: [MovieResult]
 }
 
-struct MovieResult: Decodable {
+struct MovieResult: Decodable, Identifiable {
     let poster_path: String?
     let title: String
     let overview: String
+
+    var id: UUID? {
+        return UUID()
+    }
 }

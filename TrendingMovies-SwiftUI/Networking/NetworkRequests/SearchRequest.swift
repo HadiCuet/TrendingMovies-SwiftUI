@@ -11,7 +11,7 @@ class SearchRequest: Requestable {
     var path: String = "3/search/movie"
     var parameters: [String: Any]? = [:]
     
-    init(queryString: String = "marvel") {
+    init(queryString: String) {
         self.parameters = ["api_key": "38e61227f85671163c275f9bd95a8803",
                       "query": queryString]
     }

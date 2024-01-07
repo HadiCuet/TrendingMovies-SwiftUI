@@ -11,25 +11,20 @@ struct ContentView: View {
 
     @State private var movieResults = [MovieResult]()
     @State private var movieSearchQuery: String = ""
+    private let movieService = MovieService(clientService: ClientService())
 
     var body: some View {
         VStack {
-            Image(systemName: "globe")
-                .imageScale(.large)
-                .foregroundStyle(.tint)
-            Text("Hello, world!")
+            List {
+                ForEach(movieResults) { item in
+                    ItemView(movieItem: item)
+                }
+                .padding()
+            }
         }
-        .padding()
         .onAppear {
             Task {
-                let request = SearchRequest()
-                do {
-                    let movieInfo: MovieInfo = try await ClientService().sendRequest(request)
-                    movieResults = movieInfo.results
-                }
-                catch {
-                    print("Error")
-                }
+                movieResults = await movieService.searchMovie(byString: "Marvel")
             }
         }
     }
