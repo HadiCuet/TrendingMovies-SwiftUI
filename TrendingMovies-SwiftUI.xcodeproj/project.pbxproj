@@ -20,6 +20,7 @@
 		E5906E042B4A94C3002ABC81 /* MovieInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5906E032B4A94C3002ABC81 /* MovieInfo.swift */; };
 		E5906E062B4ACD8F002ABC81 /* ItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5906E052B4ACD8F002ABC81 /* ItemView.swift */; };
 		E5906E082B4ADC02002ABC81 /* MovieService.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5906E072B4ADC02002ABC81 /* MovieService.swift */; };
+		E5906E0A2B4B0981002ABC81 /* TrendingMoviesRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5906E092B4B0981002ABC81 /* TrendingMoviesRequest.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -48,6 +49,7 @@
 		E5906E032B4A94C3002ABC81 /* MovieInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieInfo.swift; sourceTree = "<group>"; };
 		E5906E052B4ACD8F002ABC81 /* ItemView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemView.swift; sourceTree = "<group>"; };
 		E5906E072B4ADC02002ABC81 /* MovieService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieService.swift; sourceTree = "<group>"; };
+		E5906E092B4B0981002ABC81 /* TrendingMoviesRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrendingMoviesRequest.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -132,6 +134,7 @@
 			children = (
 				E5906DF72B498E2A002ABC81 /* Requestable.swift */,
 				E5906DFF2B4A91ED002ABC81 /* SearchRequest.swift */,
+				E5906E092B4B0981002ABC81 /* TrendingMoviesRequest.swift */,
 			);
 			path = NetworkRequests;
 			sourceTree = "<group>";
@@ -260,6 +263,7 @@
 				E5906E082B4ADC02002ABC81 /* MovieService.swift in Sources */,
 				E5906E062B4ACD8F002ABC81 /* ItemView.swift in Sources */,
 				E5906E002B4A91ED002ABC81 /* SearchRequest.swift in Sources */,
+				E5906E0A2B4B0981002ABC81 /* TrendingMoviesRequest.swift in Sources */,
 				E5906DFB2B4A8F37002ABC81 /* HTTPMethod.swift in Sources */,
 				E5906E042B4A94C3002ABC81 /* MovieInfo.swift in Sources */,
 				E5906DF62B498621002ABC81 /* ClientService.swift in Sources */,

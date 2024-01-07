@@ -15,6 +15,17 @@ class MovieService {
         self.clientService = clientService
     }
 
+    func getTrendingMovies() async -> [MovieResult] {
+        do {
+            let request = TrendingMoviesRequest()
+            let movieInfo: MovieInfo = try await clientService.sendRequest(request)
+            return movieInfo.results
+        }
+        catch {
+            return []
+        }
+    }
+
     func searchMovie(byString query: String) async -> [MovieResult] {
         do {
             let request = SearchRequest(queryString: query)
